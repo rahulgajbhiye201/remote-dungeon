@@ -15,9 +15,11 @@ const app: Express = express();
 
 // Middlewares
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN,
+  origin: `${process.env.CORS_ORIGIN}`,
   credentials: true,
 };
+
+console.log(process.env.CORS_ORIGIN);
 
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
