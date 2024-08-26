@@ -1,0 +1,38 @@
+type Query {
+  getAllJobs(first: Int, after: String, category: String): JobConnection!
+}
+
+type Job {
+  id: ID!
+  title: String!
+  company: String
+  location: String!
+  jobType: String
+  link: String!
+  pubDate: String!
+  category: String!
+  skills: [String!]!
+  description: String!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  endCursor: String
+}
+
+type JobEdge {
+  cursor: String!
+  node: Job!
+}
+
+type JobConnection {
+  edges: [JobEdge!]!
+  pageInfo: PageInfo!
+  allJobsCount: Int!
+  categoryCounts: [CategoryCount!]!
+}
+
+type CategoryCount {
+  category: String!
+  count: Int!
+}
