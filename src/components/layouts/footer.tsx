@@ -10,7 +10,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div>Made by Rahul ❤️ </div>
+      <div>Made with ❤️ Rahul Gajbhiye </div>
     </div>
   );
 };
